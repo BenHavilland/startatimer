@@ -95,7 +95,7 @@
                      window.onload=function(){ new CountUp(currentTime, 'counter'); }
                      $(function() {                     
                        $('#headline').click(function() {
-                         var new_headline = prompt("New Headline: ");
+                         var new_headline = prompt("New Headline: ") || "Time since last accident";
                          $(this).html("<h2>" + new_headline + "</h2>");
                        });
                      });
