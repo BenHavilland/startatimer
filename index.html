@@ -15,10 +15,8 @@
       border-radius: 15px;
       width:200px;
       height:220px;
-      position:absolute;
-      left:50%;
-      top:50%;
-      margin:-100px 0 0 -100px;
+      position: relative;
+      left:40%;
       padding: 5px;
       }
     </style>
@@ -88,7 +86,7 @@
                      "<br /trong>" + this.months + "</strong> <small>" + (this.months == 1? "month" : "months") + "</small>" +
                      "<br /trong>" + this.years + "</strong> <small>" + (this.years == 1? "year" : "years") + "</small>";
                      var self = this;
-                     setTimeout(function(){self.updateCounter();}, 1000);
+                     timerID= setTimeout(function(){self.updateCounter();}, 1000);
                      }
 
                      var currentTime = new Date()
@@ -98,15 +96,25 @@
                          var new_headline = prompt("New Headline: ") || "Time since last accident";
                          $(this).html("<h2>" + new_headline + "</h2>");
                        });
+
+                       $('#restart').click(function() {
+                         clearTimeout(timerID);
+                         var currentTime = new Date();
+                         timerID = new CountUp(currentTime, 'counter');
+                       });
                      });
+
                      </script>
 </head>
 <body>
-    <div id="headline" style="text-align: center;">
+    <div id="headline" style="text-align: center; clear: both;">
       <h2>Time since last accident</h2>
     </div>
     <div id="counter">
       Contents of this DIV will be replaced by the timer
+    </div>
+    <div id="restart" style="position: relative; width: 90px; padding: 8px; left: 45%; top: 40px; border: 1px solid sienna;">
+      restart
     </div>
 </body>
 </html>
