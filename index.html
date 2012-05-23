@@ -93,8 +93,10 @@
                      window.onload=function(){ new CountUp(currentTime, 'counter'); }
                      $(function() {                     
                        $('#headline').click(function() {
-                         var new_headline = prompt("New Headline: ") || "Time since last accident";
-                         $(this).html("<h2>" + new_headline + "</h2>");
+                         var new_headline = prompt("New Headline: ") || "Click to change title";
+                         if (new_headline){
+			   $(this).html("<h2>" + new_headline + "</h2>");
+			 }
                        });
 
                        $('#restart').click(function() {
@@ -108,7 +110,7 @@
 </head>
 <body>
     <div id="headline" style="text-align: center; clear: both;">
-      <h2>Time since last accident</h2>
+      <h2>Click to change title</h2>
     </div>
     <div id="counter">
       Contents of this DIV will be replaced by the timer
