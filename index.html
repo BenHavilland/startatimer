@@ -93,8 +93,8 @@
                      window.onload=function(){ new CountUp(currentTime, 'counter'); }
                      $(function() {                     
                        $('#headline').click(function() {
-                         var new_headline = prompt("New Headline: ") || "Click to change title";
-                         if (new_headline){
+                         var new_headline = prompt("New Headline: ");
+                         if (new_headline) {
 			   $(this).html("<h2>" + new_headline + "</h2>");
 			 }
                        });
