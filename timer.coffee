@@ -20,6 +20,9 @@ class Timer
     @total_seconds = 0
 
   tick: ->
+    msg = "tick"
+    if @total_seconds % 2 == 0 then msg = "tock"
+    console.log msg
     @total_seconds = @total_seconds + 1
 
   seconds: ->
