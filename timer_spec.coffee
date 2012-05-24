@@ -5,17 +5,18 @@ describe "Timer", ->
   beforeEach ->
     @timer = new Timer
 
-  it "adds one second when tick() is fired", ->
-    expect(@timer.seconds()).toBe 0
-    @timer.tick()
-    expect(@timer.seconds()).toBe 1
-    @timer.tick()
-    expect(@timer.seconds()).toBe 2
+  describe "seconds", ->
+    it "adds one second when tick() is fired", ->
+      expect(@timer.seconds()).toBe 0
+      @timer.tick()
+      expect(@timer.seconds()).toBe 1
+      @timer.tick()
+      expect(@timer.seconds()).toBe 2
 
-  it "rolls seconds back to 0 when they hit 60", ->
-    @timer.total_seconds = 59
-    @timer.tick()
-    expect(@timer.seconds()).toBe 0
+    it "rolls seconds back to 0 when they hit 60", ->
+      @timer.total_seconds = 59
+      @timer.tick()
+      expect(@timer.seconds()).toBe 0
 
   describe "minutes", ->
     it "returns 0 minutes when seconds are under 60", ->
@@ -50,6 +51,13 @@ describe "Timer", ->
       expect(@timer.days()).toBe 1
       @timer.total_seconds = 172800
       expect(@timer.days()).toBe 2
+
+  describe "reset", ->
+    it "can reset back to 0", ->
+      @timer.total_seconds = 100
+      @timer.reset()
+      expect(@timer.seconds()).toBe 0
+
 
 describe "Tick", ->
   beforeEach ->
