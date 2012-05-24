@@ -15,8 +15,12 @@ exports.Tick = Tick
 class Timer
   constructor: ->
     @seconds = 0
+    @minutes = 0
 
   tick: ->
-    @seconds = @seconds + 1
+    if @seconds == 59
+      @seconds = 0
+      @minutes = @minutes + 1
+    else @seconds = @seconds + 1
 
 exports.Timer = Timer

@@ -2,14 +2,26 @@ Tick = (require './timer').Tick
 Timer = (require './timer').Timer
 
 describe "Timer", ->
-  it "adds one second when tick() is fired", ->
-    timer = new Timer
-    expect(timer.seconds).toBe 0
-    timer.tick()
-    expect(timer.seconds).toBe 1
-    timer.tick()
-    expect(timer.seconds).toBe 2
+  beforeEach ->
+    @timer = new Timer
 
+  it "adds one second when tick() is fired", ->
+    expect(@timer.seconds).toBe 0
+    @timer.tick()
+    expect(@timer.seconds).toBe 1
+    @timer.tick()
+    expect(@timer.seconds).toBe 2
+
+  it "rolls seconds back to 0 when they hit 60", ->
+    @timer.seconds = 59
+    @timer.tick()
+    expect(@timer.seconds).toBe 0
+
+  it "adds a minute every 60 seconds", ->
+    expect(@timer.minutes).toBe 0
+    @timer.seconds = 59
+    @timer.tick()
+    expect(@timer.minutes).toBe 1
 
 describe "Tick", ->
   beforeEach ->
