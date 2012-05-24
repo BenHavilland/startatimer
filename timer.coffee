@@ -14,13 +14,21 @@ exports.Tick = Tick
 
 class Timer
   constructor: ->
-    @seconds = 0
-    @minutes = 0
+    @total_seconds = 0
 
   tick: ->
-    if @seconds == 59
-      @seconds = 0
-      @minutes = @minutes + 1
-    else @seconds = @seconds + 1
+    @total_seconds = @total_seconds + 1
+
+  seconds: ->
+    @total_seconds % 60
+
+  minutes: ->
+    Math.floor(@total_seconds / 60) % 60
+
+  hours: ->
+    Math.floor(@total_seconds / 3600) % 24
+
+  days: ->
+    Math.floor(@total_seconds / 86400)
 
 exports.Timer = Timer
