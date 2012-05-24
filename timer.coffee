@@ -1,4 +1,5 @@
-if not exports? then exports = window
+if exports? then externalize = exports
+if window? then externalize = window
 
 class Tick
   constructor: ->
@@ -11,7 +12,7 @@ class Tick
   fire: ->
     (sub.tick() for sub in @subscribers)
 
-exports.Tick = Tick
+externalize.Tick = Tick
 
 
 class Timer
@@ -33,4 +34,4 @@ class Timer
   days: ->
     Math.floor(@total_seconds / 86400)
 
-exports.Timer = Timer
+externalize.Timer = Timer
