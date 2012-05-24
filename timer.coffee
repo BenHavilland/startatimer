@@ -1,3 +1,5 @@
+if not exports? then exports = window
+
 class Tick
   constructor: ->
     @subscribers = []
