@@ -3,6 +3,7 @@ class Tick
     @subscribers = []
 
   addSubscriber: (newSub) ->
+    throw "InvalidSubscriberError" if not newSub.tick?
     @subscribers.push newSub
 
   fire: ->

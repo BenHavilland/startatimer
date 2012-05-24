@@ -21,3 +21,6 @@ describe "Tick", ->
     @tick.fire()
     expect(@foo.tick).toHaveBeenCalled()
     expect(@bar.tick).toHaveBeenCalled()
+
+  it "rejects new subscribers without a tick() method", ->
+    expect((=> @tick.addSubscriber { thing: "yeah!" })).toThrow("InvalidSubscriberError")
