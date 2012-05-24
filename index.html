@@ -9,21 +9,23 @@
     <script type="text/javascript" src="startatimer.js"></script>
   </head>
   <body>
-    <div id="timer">
-      <div id="seconds"></div>
-      <div id="minutes"></div>
-      <div id="hours"></div>
-      <div id="days"></div>
-    </div>
+    <div id="container">
 
-    <div id="headline" >
-      <h2>Click to change title</h2>
-    </div>
-    <div id="counter">
-      Contents of this DIV will be replaced by the timer
-    </div>
-    <div id="restart">
-      restart
+      <div id="headline" >
+        <h1>Timer Title</h1>
+      </div>
+
+      <div id="timer">
+        <div class="value" id="seconds">0</div><div class="unit">seconds</div>
+        <div class="value" id="minutes">0</div><div class="unit">minutes</div>
+        <div class="value" id="hours">0</div><div class="unit">hours</div>
+        <div class="value" id="days">0</div><div class="unit">days</div>
+      </div>
+
+      <div id="restart">
+        restart
+      </div>
+
     </div>
   </body>
 </html>
