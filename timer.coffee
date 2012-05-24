@@ -10,3 +10,13 @@ class Tick
     (sub.tick() for sub in @subscribers)
 
 exports.Tick = Tick
+
+
+class Timer
+  constructor: ->
+    @seconds = 0
+
+  tick: ->
+    @seconds = @seconds + 1
+
+exports.Timer = Timer

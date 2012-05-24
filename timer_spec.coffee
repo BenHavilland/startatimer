@@ -1,4 +1,15 @@
 Tick = (require './timer').Tick
+Timer = (require './timer').Timer
+
+describe "Timer", ->
+  it "adds one second when tick() is fired", ->
+    timer = new Timer
+    expect(timer.seconds).toBe 0
+    timer.tick()
+    expect(timer.seconds).toBe 1
+    timer.tick()
+    expect(timer.seconds).toBe 2
+
 
 describe "Tick", ->
   beforeEach ->
