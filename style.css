@@ -16,6 +16,15 @@
     font-size: 40px;
 }
 
+#headline h2 {
+    margin: 0;
+    font-size: 14px;
+    float: left;
+    position: relative;
+    top: -30px;
+    left: 30px;
+}
+
 #headline:hover {
     color: #BBB;
     cursor: pointer;
