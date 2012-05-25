@@ -23,5 +23,10 @@
   $('#restart').click ->
     window.timer.reset()
 
+  $('body').keydown (e) ->
+    if e.which == 13
+      time = (prompt "Set seconds elapsed: ") or 0
+      window.timer.total_seconds = time
+
   setInterval (=> window.ticker.fire()), 1000
 )
