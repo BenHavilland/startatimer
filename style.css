@@ -1,42 +1,32 @@
 #container {
     font-family: lucida grande;
-    margin-left: 35%;
-/*    border-left: 1px solid black;
-    border-right: 1px solid black;*/
-    width: 300px;
-    padding: 10px;
+    width: 60%;
+    margin: 0 auto;
 }
 
 #headline {
-    margin-top: 10%;
-    width: 100%;
+    margin-top: 100px;
 }
 
 #headline h1 {
+    text-align: center;
     font-size: 40px;
 }
 
-#headline h2 {
-    margin: 0;
-    font-size: 14px;
-    float: left;
-    position: relative;
-    top: -30px;
-    left: 30px;
-}
-
-#headline:hover {
-    color: #BBB;
+#headline h1:hover {
+    color: sienna;
     cursor: pointer;
 }
 
 #timer {
+    margin: 0 auto;
     height: 150px;
     border: 3px solid sienna;
     width: 200px;
     padding: 20px;
     border-radius: 20px;
     font-size: 30px;
+    box-shadow: 5px 5px 5px #aaa;
 }
 
 #timer .value {
@@ -45,23 +35,27 @@
 }
 
 #timer .unit {
-    color: #888;
+    color: #ccc;
     float: left;
     margin-left: 10px;
 }
 
 #restart {
-    position: relative;
-    top: 30px;
-    left: 80px;
+    margin: 20px auto;
     width: 50px;
     padding: 10px;
-    color: #BBB;
+    color: #ccc;
+    background: #eee;
+    border: 2px dotted #ccc;
 }
 
 #restart:hover {
-    color: #000;
-    background: #DDD;
-    border: 1px solid black;
+    color: sienna;
+    background: #eee;
+    border: 2px solid sienna;
     cursor: pointer;
+}
+
+#restart:active {
+    background: #ccc;
 }

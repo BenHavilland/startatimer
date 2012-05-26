@@ -10,11 +10,6 @@
 
   window.ticker.addSubscriber window.timerDisplay
 
-  $('#headline h2').hide()
-  $('#headline').hover (->
-    $('#headline h2').show()), (->
-    $('#headline h2').hide())
-
   $('#headline h1').click ->
     old = $(this).html()
     headline = (prompt "New Headline: ") or old
